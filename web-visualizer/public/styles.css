@@ -1,0 +1,123 @@
+body {
+  /* Sizes */
+  --xlarge: 55.5vmin;
+  --large: 55vmin;
+  --medium: 15vmin;
+  --small: 10vmin;
+  --xsmall: 5vmin;
+  --radius: calc(40vmin + var(--large));
+
+  /* Durations */
+  --fast: 2s;
+  --slow: 10s;
+  --delay: 2s;
+
+  /* Colors */
+  --color-planet: #469471;
+  --color-moon: #8d9493;
+  --color-moon-bright: #adb8b7;
+  --color-moon-dark: #676e6d;
+
+
+  height: 90vh;
+  padding: 0;
+  margin: 0;
+}
+
+div {
+  animation: orbit var(--slow);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  border-radius: var(--large);
+  background: var(--color-planet);
+  bottom: 0;
+  height: var(--large);
+  left: 0;
+  right: 0;
+  top: 0;
+  width: var(--large);
+  margin: auto;
+  position: absolute;
+}
+
+div.planet {
+  animation-name: grow;
+  animation-duration: var(--fast);
+  animation-direction: alternate;
+  z-index: 1;
+}
+
+div:nth-child(7n + 2) {
+  animation-delay: calc(5 * var(--dealy));
+}
+
+div:nth-child(7n + 3) {
+  animation-delay: calc(4 * var(--delay));
+}
+
+div:nth-child(7n + 4) {
+  animation-delay: calc(3 * var(--delay));
+}
+
+div:nth-child(7n + 5) {
+  animation-delay: calc(2 * var(--delay));
+}
+
+div:nth-child(7n + 6) {
+  animation-delay: calc(1 * var(--delay));
+}
+
+@keyframes orbit {
+  0% {
+    background-color: var(--color-moon);
+    height: var(--small);
+    left: calc(-1 * var(--radius));
+    width: var(--small);
+    z-index: 0;
+  }
+
+  25% {
+    background-color: var(--color-moon-dark);
+    height: var(--xsmall);
+    width: var(--xsmall);
+  }
+
+  49%{
+    z-index: 0;
+  }
+
+  50% {
+    background-color: var(--color-moon);
+    height: var(--small);
+    left: var(--radius);
+    width: var(--small);
+    z-index: 2;
+  }
+
+  75% {
+    background-color: var(--color-moon-bright);
+    height: var(--medium);
+    width: var(--medium);
+  }
+
+  100% {
+    background-color: var(--color-moon);
+    height: var(--small);
+    left: calc(-1 * var(--radius));
+    width: var(--small);
+    z-index: 2;
+  }
+}
+
+@keyframes grow {
+  0% {
+    height: var(--large);
+    width: var(--large);
+  }
+
+  100% {
+    height: var(--xlarge);
+    width: var(--xlarge);
+  }
+}
