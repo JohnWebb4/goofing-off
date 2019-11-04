@@ -1,0 +1,95 @@
+.alcremie {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.alcremie-hand {
+  position: absolute;
+  top: 47.2%;
+  left: 22.3%;
+}
+
+.pocky-stick {
+  height: 8vmin;
+}
+.pocky-stick-container {
+  animation: feed 5s ease-in-out infinite running;
+  overflow: hidden;
+  position: absolute;
+}
+
+.pocky-stick-container:nth-child(2) {
+  height: 8vmin;
+  left: 64%;
+  top: 65%;
+  transform: rotate(0.5turn);
+  animation-delay: 2.5s;
+}
+
+.pocky-box {
+  animation: rattle-box 5s ease-in-out infinite running;
+  height: 15%;
+  position: absolute;
+  right: 30%;
+  top: 60%;
+}
+
+@keyframes feed {
+  0% {
+    height: 8vmin;
+    left: 64%;
+    top: 65%;
+    transform: rotate(0.5turn);
+  }
+  25% {
+    left: 64%;
+    top: 25%;
+    transform: rotate(0.5turn);
+  }
+  50% {
+    height: 8vmin;
+    left: 28.35%;
+    top: 45%;
+    transform: rotate(-0.5turn) scale(1);
+  }
+  66% {
+    transform: rotate(-0.48turn) scale(1);
+  }
+  82% {
+    transform: rotate(-0.52turn) scale(1);
+  }
+  100% {
+    height: 0;
+    left: 28.35%;
+    top: 45%;
+    transform: rotate(-0.5turn) scale(1);
+  }
+}
+
+@keyframes rattle-box {
+  0% {
+    transform: rotate(0turn);
+  }
+  2% {
+    transform: rotate(0.05turn);
+  }
+  4% {
+    transform: rotate(-0.05turn);
+  }
+  10% {
+    transform: rotate(0turn);
+  }
+  50% {
+    transform: rotate(0turn);
+  }
+  52% {
+    transform: rotate(0.05turn);
+  }
+  54% {
+    transform: rotate(-0.05turn);
+  }
+  60% {
+    transform: rotate(0turn);
+  }
+}
