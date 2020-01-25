@@ -1,0 +1,52 @@
+body {
+  --speed: 5s;
+  --stroke-length: 160%;
+  --circle-4: black;
+  --circle-3: lightblue;
+  --circle-2: black;
+  --circle-1: lightblue;
+
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+
+  animation: radial-move var(--speed) alternate infinite;
+  animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  fill: transparent;
+  stroke: var(--circle-1);
+  stroke-dasharray: var(--stroke-length);
+  stroke-width: 10px;
+}
+
+path:nth-child(2) {
+  stroke: var(--circle-2);
+}
+
+path:nth-child(3) {
+  stroke: var(--circle-3);
+}
+
+path:nth-child(4) {
+    stroke: var(--circle-4);
+}
+
+@keyframes radial-move {
+  0% {
+    stroke-dashoffset: var(--stroke-length);
+  }
+  10% {
+    stroke-dashoffset: var(--stroke-length);
+  }
+
+  90% {
+    stroke-dashoffset: 0%;
+  }
+
+  100% {
+    stroke-dashoffset: 0%;
+  }
+}
